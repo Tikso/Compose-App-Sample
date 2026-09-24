@@ -159,7 +159,7 @@ private fun statusColor(status: String): Color = when (status) {
     else -> Color.Gray
 }
 
-// ---------- Preview ----------
+// ---------- Previews ----------
 
 // 🚩 PAIN #5: to preview one row we must fill a 12-field network DTO.
 private fun fakeCharacter(id: Int, name: String, status: String) = CharacterDto(
