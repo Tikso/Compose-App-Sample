@@ -2,8 +2,8 @@ package com.example.patternlab.screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.patternlab.data.CharacterDto
-import com.example.patternlab.data.RetrofitProvider
+import com.example.patternlab.data.remote.CharacterDto
+import com.example.patternlab.data.remote.RetrofitProvider
 import java.io.IOException
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package com.example.patternlab.data
+package com.example.patternlab.data.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Query

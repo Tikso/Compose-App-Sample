@@ -34,8 +34,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import com.example.patternlab.data.CharacterDto
-import com.example.patternlab.data.LocationDto
+import com.example.patternlab.data.remote.CharacterDto
+import com.example.patternlab.data.remote.LocationDto
 
 import com.example.patternlab.screen.CharactersNaiveViewModel
 import com.example.patternlab.screen.CharactersUiState

@@ -1,4 +1,4 @@
-package com.example.patternlab.data
+package com.example.patternlab.data.remote
 
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType

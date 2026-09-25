@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.patternlab.presentation.characters.CharactersScreen
 import com.example.patternlab.ui.theme.PatternLabTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PatternLabTheme {
-CharactersNaiveScreen()
+                // Lab 1 (naive) is kept for comparison: swap in CharactersNaiveScreen() to see it.
+                CharactersScreen()
             }
         }
     }
