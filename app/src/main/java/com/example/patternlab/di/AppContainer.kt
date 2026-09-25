@@ -1,6 +1,5 @@
 package com.example.patternlab.di
 
-import com.example.patternlab.data.remote.RetrofitProvider
 import com.example.patternlab.data.repository.CharacterRepositoryImpl
 import com.example.patternlab.domain.repository.CharacterRepository
 import com.example.patternlab.domain.usecase.GetCharactersUseCase
@@ -14,7 +13,7 @@ import com.example.patternlab.domain.usecase.GetCharactersUseCase
 class AppContainer {
     // Typed as the INTERFACE: nothing outside this file knows the Impl exists.
     private val characterRepository: CharacterRepository by lazy {
-        CharacterRepositoryImpl(RetrofitProvider.api)
+        CharacterRepositoryImpl(NetworkModule.rickAndMortyApi)
     }
 
     val getCharactersUseCase: GetCharactersUseCase

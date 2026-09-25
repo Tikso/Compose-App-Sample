@@ -1,21 +1,16 @@
-package com.example.patternlab.presentation.characters
+package com.example.patternlab.presentation.screens.characters
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -28,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -36,7 +30,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.patternlab.domain.model.Character
 import com.example.patternlab.domain.model.CharacterStatus
-import com.example.patternlab.ui.theme.PatternLabTheme
+import com.example.patternlab.presentation.components.ErrorContent
+import com.example.patternlab.presentation.components.LoadingContent
+import com.example.patternlab.presentation.theme.PatternLabTheme
 
 /** STATEFUL wrapper: connects the ViewModel to the stateless content below. */
 @Composable
@@ -69,30 +65,6 @@ private fun CharactersContent(
             is CharactersUiState.Success -> CharacterList(uiState.characters, contentModifier)
             is CharactersUiState.Error -> ErrorContent(uiState.message, onRetry, contentModifier)
         }
-    }
-}
-
-@Composable
-private fun LoadingContent(modifier: Modifier = Modifier) {
-    Box(modifier = modifier, contentAlignment = Alignment.Center) {
-        CircularProgressIndicator()
-    }
-}
-
-@Composable
-private fun ErrorContent(
-    message: String,
-    onRetry: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Column(
-        modifier = modifier.padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(text = message, textAlign = TextAlign.Center)
-        Spacer(Modifier.height(16.dp))
-        Button(onClick = onRetry) { Text("Retry") }
     }
 }
 

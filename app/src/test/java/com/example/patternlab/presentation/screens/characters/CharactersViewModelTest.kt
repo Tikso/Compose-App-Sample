@@ -1,4 +1,4 @@
-package com.example.patternlab.presentation.characters
+package com.example.patternlab.presentation.screens.characters
 
 import com.example.patternlab.domain.model.Character
 import com.example.patternlab.domain.model.CharacterStatus

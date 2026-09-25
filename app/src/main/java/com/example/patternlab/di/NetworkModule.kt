@@ -1,5 +1,6 @@
-package com.example.patternlab.data.remote
+package com.example.patternlab.di
 
+import com.example.patternlab.data.remote.RickAndMortyApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -7,7 +8,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 
-object RetrofitProvider {
+/** Builds the networking stack once. Hilt's @Module + @Provides will replace this in a later lab. */
+object NetworkModule {
     private const val BASE_URL = "https://rickandmortyapi.com/api/" // must end with "/"
 
     // Ignore JSON keys we didn't declare in our DTOs instead of crashing.
@@ -18,7 +20,7 @@ object RetrofitProvider {
         .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC })
         .build()
 
-    val api: RickAndMortyApi by lazy {
+    val rickAndMortyApi: RickAndMortyApi by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)

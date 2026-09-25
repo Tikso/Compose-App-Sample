@@ -1,4 +1,4 @@
-package com.example.patternlab.presentation.characters
+package com.example.patternlab.presentation.screens.characters
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

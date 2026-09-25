@@ -1,4 +1,4 @@
-package com.example.patternlab.ui.theme
+package com.example.patternlab.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
